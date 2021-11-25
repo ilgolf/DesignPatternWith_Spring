@@ -47,10 +47,9 @@ public class LogAopHelperCLS {
     @Around("GetMapping()")
     public Object Around(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info("=====================AspectJ TEST  : Around Logging Start=====================");
-
         try {
             Object result = joinPoint.proceed();
-            logger.info("=====================AspectJ TEST  : Around Logging Start=====================");
+            logger.info("=====================AspectJ TEST  : Around Logging End=====================");
             return result;
         } catch (Exception e) {
             logger.error("=====================AspectJ Around Exception=====================");
